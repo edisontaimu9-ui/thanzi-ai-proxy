@@ -10,7 +10,7 @@ compatibility_flags = ["nodejs_compat"]
 # ─────────────────────────────────────────────
 [[kv_namespaces]]
 binding = "THANZI_KEYS"
-id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+id = "41c18e7441344bffa21174dfb7f4da0f"
 
 # ─────────────────────────────────────────────
 # Environment variables (non-secret)
