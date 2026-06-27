@@ -1,0 +1,41 @@
+name = "thanzi-ai-proxy"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# ─────────────────────────────────────────────
+# KV Namespace
+# Create with: wrangler kv namespace create THANZI_KEYS
+# Then paste the generated id below.
+# ─────────────────────────────────────────────
+[[kv_namespaces]]
+binding = "THANZI_KEYS"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+# ─────────────────────────────────────────────
+# Environment variables (non-secret)
+# ─────────────────────────────────────────────
+[vars]
+# Set to "true" ONLY for local dev (wrangler dev). Never deploy with this on.
+BYPASS_AUTH = "false"
+
+# ─────────────────────────────────────────────
+# Secrets (never put real values here)
+# Set them via CLI:
+#   wrangler secret put GROQ_API_KEY
+#   wrangler secret put OPENAI_API_KEY
+#   wrangler secret put ANTHROPIC_API_KEY
+# ─────────────────────────────────────────────
+
+# ─────────────────────────────────────────────
+# Local dev overrides
+# ─────────────────────────────────────────────
+[env.dev]
+name = "thanzi-ai-proxy-dev"
+[env.dev.vars]
+BYPASS_AUTH = "true"
+
+[[env.dev.kv_namespaces]]
+binding = "THANZI_KEYS"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_YOUR_KV_PREVIEW_ID"

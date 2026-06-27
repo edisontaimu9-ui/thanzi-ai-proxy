@@ -1,0 +1,19 @@
+{
+  "name": "thanzi-ai-proxy",
+  "version": "1.0.0",
+  "description": "Secure API gateway for AI providers — powers the Thanzi app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --env dev",
+    "deploy": "wrangler deploy",
+    "deploy:dry": "wrangler deploy --dry-run",
+    "kv:create": "wrangler kv namespace create THANZI_KEYS",
+    "kv:create:preview": "wrangler kv namespace create THANZI_KEYS --preview",
+    "keys:add": "node scripts/add-key.mjs",
+    "logs": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
